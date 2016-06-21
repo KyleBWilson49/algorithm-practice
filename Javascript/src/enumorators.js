@@ -7,6 +7,8 @@ Array.prototype.myEach = function (callback) {
   return this
 }
 
+module.exports.myEach = Array.prototype.myEach
+
 Array.prototype.myMap = function (callback) {
   let result = []
   for (let i = 0; i < this.length; i++) {
@@ -15,6 +17,8 @@ Array.prototype.myMap = function (callback) {
 
   return result
 }
+
+module.exports.myMap = Array.prototype.myMap
 
 Array.prototype.mySelect = function (callback) {
   let result = []
@@ -28,6 +32,8 @@ Array.prototype.mySelect = function (callback) {
   return result
 }
 
+module.exports.mySelect = Array.prototype.mySelect
+
 Array.prototype.myReject = function (callback) {
   let result = []
   for (let i = 0; i < this.length; i++) {
@@ -40,6 +46,8 @@ Array.prototype.myReject = function (callback) {
   return result
 }
 
+module.exports.myReject = Array.prototype.myReject
+
 Array.prototype.myAny = function (callback) {
   for (let i = 0; i < this.length; i++) {
     if (callback(this[i])) {
@@ -48,6 +56,8 @@ Array.prototype.myAny = function (callback) {
   }
   return false
 }
+
+module.exports.myAny = Array.prototype.myAny
 
 Array.prototype.myAll = function (callback) {
   let result = true
@@ -60,6 +70,8 @@ Array.prototype.myAll = function (callback) {
   return result
 }
 
+module.exports.myAll = Array.prototype.myAll
+
 Array.prototype.myReduce = function (callback) {
   let accumulator = this[0]
   for (let i = 1; i < this.length; i++) {
@@ -68,16 +80,4 @@ Array.prototype.myReduce = function (callback) {
   return accumulator
 }
 
-let array = [1, 2, 3, 4, 5]
-let callback = function (el) {
-  if (el > 3) {
-    return true
-  }
-  return false
-}
-let callback2 = function (x, y) {
-  return x + y
-}
-
-
-console.log(array.myReduce(callback2))
+module.exports.myReduce = Array.prototype.myReduce
