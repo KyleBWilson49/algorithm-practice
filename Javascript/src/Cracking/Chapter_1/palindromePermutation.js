@@ -7,8 +7,7 @@ const palindromePermutation = function (string) {
 
   for (var i = 0; i < chars.length; i++) {
     const current = chars[i]
-    if (current.charCodeAt(0) <= 'a'.charCodeAt(0) ||
-        'z'.charCodeAt(0) <= current.charCodeAt(0)) {
+    if (current <= 'a' || current >= 'z') {
       continue
     }
 
@@ -21,7 +20,7 @@ const palindromePermutation = function (string) {
 
   let usedOdd = false
 
-  Object.keys(charsCount).forEach(function (key) {
+  Object.keys(charsCount).forEach((key) => {
     if (charsCount[key] % 2 !== 0) {
       if (usedOdd) {
         result = false
@@ -34,5 +33,3 @@ const palindromePermutation = function (string) {
 }
 
 module.exports.palindromePermutation = palindromePermutation
-
-console.log(palindromePermutation('Tact Coa'))

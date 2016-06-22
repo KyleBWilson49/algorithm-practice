@@ -17,7 +17,7 @@ describe('isUnique', function () {
     isUnique(uniqueString).should.equal(true)
   })
 
-  it('should return true given an empty array', function () {
+  it('should return true given an empty string', function () {
     isUnique(emptyString).should.equal(true)
   })
 })
