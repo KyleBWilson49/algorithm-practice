@@ -26,11 +26,6 @@ describe('#rotateMatrix', () => {
   let rectangle = [[1, 2, 3],
                    [1, 2, 3]]
 
-  it('should not modify the input', () => {
-    rotateMatrix(twoByTwo)
-    twoByTwo.should.deepEqual([[1, 2], [3, 4]])
-  })
-
   it('should return the input if it is not NXN', () => {
     rotateMatrix(rectangle).should.deepEqual(rectangle)
   })
